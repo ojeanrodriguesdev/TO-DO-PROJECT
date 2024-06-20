@@ -1,19 +1,19 @@
-dcument.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const taskForm = document.getElementById("task-form");
   const taskInput = document.getElementById("task-input");
   const taskList = document.getElementById("task-list");
 
   function saveTasks() {
     const tasks = [];
-    taskList.querySelectorAll("li").forEach((li) => {
-      const taskText = li.querySelector("span").textContent;
+    taskList.querySelectorAll('li').forEach((li) => {
+      const taskText = li.querySelector('span').textContent;
       tasks.push(taskText);
     });
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
   function loadTasks() {
-    const tasks = JSON.parse(localStorage.getItem("tasks"));
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
     if (tasks) {
       tasks.forEach((taskText) => {
         addTaskToDOM(taskText);
