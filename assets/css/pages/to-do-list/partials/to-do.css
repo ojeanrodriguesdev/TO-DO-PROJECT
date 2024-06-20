@@ -1,0 +1,75 @@
+.section-one{
+  width: 100%;
+  height: screen;
+}
+.container-section-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px;
+}
+.container-section-2 {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: solid 2px black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-section-3 {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: black;
+  border-radius: 10px;
+  margin: 0px 250px;
+  padding: 0;
+}
+.container-section-list {
+  display: flex;
+  margin: 10px;
+  padding: 0px;
+  width: 600px;
+  align-items: center;
+  color: white;
+}
+#task-list {
+  padding: 24px;
+  width: 900px;
+  list-style-type: none;
+}
+#task-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  list-style-type: none;
+}
+.delete-button,
+.edit-button {
+  margin-left: 10px;
+  background-color: white;
+  color: black;
+  border: solid 1px white;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.delete-button{
+    background-color: red;
+    color: white;
+}
+.edit-button{
+    background-color: blue;
+    color: white;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}

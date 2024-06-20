@@ -1,0 +1,25 @@
+.div-section-1{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 24px 0px 0px 60px;
+    margin: 0;
+  }
+  .a-section-1{
+    color: #3c3c3c;
+  }
+  .div-section-2{
+    display: flex;
+    margin: 10px 60px;
+  }
+  .div-section-3{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10px 10px;
+    padding: 0px 30px;
+    margin: 0;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 25px;
+  }
