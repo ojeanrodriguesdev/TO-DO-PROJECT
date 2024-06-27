@@ -2,15 +2,15 @@
     display: flex;
     background-color: black;
     margin: 0px;
-    padding: 0;
+    padding: 0 1rem;
     height: 52px;
     border-radius: 0px;
     align-items: center;
     justify-content: center;
-    gap: 25px;
+    gap: 1.5rem;
   }
   .d-jr {
-    font-size: 10px;
+    font-size: 0.650rem;
     padding: 0px;
     margin: 0px;
     color: white;
@@ -31,4 +31,125 @@
     padding: 0;
     margin: 0;
     color: white;
+  }
+
+  @media (min-width: 320px) and (max-width: 768px){
+    .header{
+      flex-direction: row;
+      height: 100%;
+      padding: 0.5rem;
+      font-size: 10px;
+    }
+    .h1-header-1{
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      font-size: 15px;
+    }
+    .h-div{
+      justify-content: center;
+    }
+  }
+  @media (min-width: 769px) and (max-width: 1024px){
+    .header{
+      flex-direction: row;
+      height: 100%;
+      padding: 0.5rem;
+      font-size: 20px;
+    }
+    .h1-header-1{
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      font-size: 30px;
+    }
+    .h-div{
+      justify-content: center;
+    }
+  }
+  @media (min-width: 1025px) and (max-width: 1440px){
+    .header{
+      flex-direction: row;
+      height: 100%;
+      padding: 0.5rem;
+      font-size: 20px;
+    }
+    .h1-header-1{
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      font-size: 30px;
+    }
+    .h-div{
+      justify-content: center;
+    }
+  }
+  @media (min-width: 1441px) and (max-width: 1920px){
+    .header{
+      flex-direction: row;
+      height: 100%;
+      padding: 0.5rem;
+      font-size: 20px;
+    }
+    .h1-header-1{
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      font-size: 30px;
+    }
+    .h-div{
+      justify-content: center;
+    }
+  }
+  @media (min-width: 1921px) and (max-width: 2560px){
+    .header{
+      flex-direction: row;
+      height: 100%;
+      padding: 0.5rem;
+      font-size: 35px;
+    }
+    .h1-header-1{
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      font-size: 55px;
+    }
+    .h-div{
+      justify-content: center;
+    }
+  }
+  @media (min-width: 2561px) and (max-width: 3840px){
+    .header{
+      flex-direction: row;
+      height: 100%;
+      padding: 0.5rem;
+      font-size: 40px;
+    }
+    .h1-header-1{
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      font-size: 65px;
+    }
+    .h-div{
+      justify-content: center;
+    }
+  }
+  @media (min-width: 3841px){
+    .header{
+      flex-direction: row;
+      height: 100%;
+      padding: 0.5rem;
+      font-size: 40px;
+    }
+    .h1-header-1{
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      font-size: 65px;
+    }
+    .h-div{
+      justify-content: center;
+    }
+
   }

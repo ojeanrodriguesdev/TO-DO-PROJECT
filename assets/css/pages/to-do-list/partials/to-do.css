@@ -1,22 +1,31 @@
-.section-one{
+.section-one {
   width: 100%;
-  height: screen;
+  height: 100vh;
 }
 .container-section-1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 24px;
+  margin: 40px;
 }
 .container-section-2 {
   background-color: black;
-  color: white;
   padding: 10px;
   border: solid 2px black;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 450px;;
+  margin: 40px 0px 0px 0px;
+}
+#task-input{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 30px;
 }
 .container-section-3 {
   display: flex;
@@ -24,52 +33,488 @@
   align-items: center;
   background-color: black;
   border-radius: 10px;
-  margin: 0px 250px;
   padding: 0;
 }
 .container-section-list {
   display: flex;
-  margin: 10px;
+  margin: 0.625rem;
   padding: 0px;
-  width: 600px;
+  width: 10px;
   align-items: center;
   color: white;
 }
 #task-list {
-  padding: 24px;
-  width: 900px;
+  width: 100%;
   list-style-type: none;
 }
 #task-list li {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   background-color: black;
   color: white;
-  padding: 10px;
+  padding: 0.625rem;
   border-radius: 5px;
   list-style-type: none;
 }
+.button-container {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
 .delete-button,
 .edit-button {
-  margin-left: 10px;
+  margin-left: 0.625rem;
   background-color: white;
   color: black;
   border: solid 1px white;
   border-radius: 5px;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 0.3125rem 0.625rem;
 }
-.delete-button{
-    background-color: red;
-    color: white;
+.delete-button {
+  background-color: red;
+  color: white;
 }
-.edit-button{
-    background-color: blue;
-    color: white;
+.edit-button {
+  background-color: blue;
+  color: white;
 }
-.button-container {
-  display: flex;
-  justify-content: flex-end;
-  flex-grow: 1;
+@media (min-width: 320px) and (max-width: 768px) {
+  .container-section-1 {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    margin: 0.5rem;
+  }
+  .container-section-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 30px;
+  }
+  #task-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+  }
+  .button-task{
+    font-size: small;
+    height: 30px;
+    width: 70px;
+  }
+  .container-section-3 {
+    justify-content: space-around;
+    padding: 0;
+    margin: 5% 10%;
+  }
+  .container-section-list,
+  #task-list {
+    justify-content: space-around;
+    width: 100%;
+    font-size: xx-small;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .li-ul {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+  }
+  .button-container {
+    justify-content: end;
+    gap: px;
+    display: flex;
+    flex-grow: 1;
+  }
+  .delete-button,
+  .edit-button {
+    width: 50px;
+    align-content: space-around;
+    font-size: smaller;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container-section-1 {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    margin: 0.5rem;
+  }
+  .container-section-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 330px;
+    height: 40px;
+    padding: 10px;
+  }
+  #task-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+  }
+  .container-section-3 {
+    justify-content: space-between;
+    padding: 0;
+    margin: 5% 10%;
+  }
+  .container-section-list,
+  #task-list {
+    width: 100%;
+    font-size: larger;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .li-ul {
+    display: flex;
+    width: 90%;
+    margin: 0;
+    padding: 5px;
+    flex-direction: row;
+  }
+  .button-container {
+    display: flex;
+    flex-grow: 1;
+  }
+  .delete-button,
+  .edit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100px;
+    align-content: center;
+    font-size: large;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .container-section-1 {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    margin: 0.5rem;
+  }
+  .container-section-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 330px;
+    height: 40px;
+    padding: 10px;
+  }
+  #task-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+  }
+  .container-section-3 {
+    justify-content: space-between;
+    padding: 0;
+    margin: 5% 20%;
+ 
+  }
+  .container-section-list,
+  #task-list {
+    width: 100%;
+    font-size: larger;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .li-ul {
+    display: flex;
+    width: 90%;
+    margin: 0;
+    padding: 5px;
+    flex-direction: row;
+  }
+  .button-container {
+    display: flex;
+    flex-grow: 1;
+  }
+  .delete-button,
+  .edit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100px;
+    align-content: center;
+    font-size: smaller;
+  }
+}
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .container-section-1 {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    margin: 0.5rem;
+  }
+  .container-section-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 330px;
+    height: 40px;
+    padding: 10px;
+  }
+  #task-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+  }
+  .container-section-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 5% 20%;
+  }
+  .container-section-list,
+  #task-list {
+    width: 100%;
+    font-size: x-large;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .li-ul {
+    display: flex;
+    width: 90%;
+    margin: 0;
+    padding: 5px;
+    flex-direction: row;
+  }
+  .button-container {
+    display: flex;
+    flex-grow: 1;
+  }
+  .delete-button,
+  .edit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100px;
+    align-content: center;
+    font-size: x-large;
+  }
+}
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .container-section-1 {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    margin: 0.5rem;
+  }
+  .container-section-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 530px;
+    height: 40px;
+    padding: 10px;
+  }
+  #task-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 40px;
+    font-size: larger;
+  }
+  .button-task{
+    font-size: larger;
+    height: 40px;
+    width: 110px;
+  }
+  .container-section-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 5% 20%;
+  }
+  .container-section-list,
+  #task-list {
+    width: 100%;
+    font-size: 40px;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .li-ul {
+    display: flex;
+    width: 90%;
+    margin: 0;
+    padding: 5px;
+    flex-direction: row;
+  }
+  .button-container {
+    display: flex;
+    flex-grow: 1;
+  }
+  .delete-button,
+  .edit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 100px;
+    width: 150px;
+    align-content: center;
+    font-size: xx-large;
+  }
+}
+@media (min-width: 2561px) and (max-width: 3840px) {
+  .container-section-1 {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    margin: 0.5rem;
+  }
+  .container-section-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1150px;
+    height: 80px;
+    padding: 10px 0px;
+    margin-top: 150px;
+  }
+  #task-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 850px;
+    height: 60px;
+    font-size: 50px;
+  }
+  .button-task{
+    font-size: 40px;
+    margin: 20px;
+    height: 70px;
+    width: 210px;
+  }
+  .container-section-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 5% 20%;
+  }
+  .container-section-list,
+  #task-list {
+    width: 100%;
+    font-size: 40px;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .li-ul {
+    display: flex;
+    width: 90%;
+    margin: 0;
+    padding: 5px;
+    flex-direction: row;
+  }
+  .button-container {
+    display: flex;
+    flex-grow: 1;
+  }
+  .delete-button,
+  .edit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 100px;
+    width: 150px;
+    align-content: center;
+    font-size: xx-large;
+  }
+}
+@media (min-width: 3841px) {
+  .container-section-1 {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    margin: 0.5rem;
+  }
+  .container-section-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1150px;
+    height: 80px;
+    padding: 10px 0px;
+    margin-top: 150px;
+  }
+  #task-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 850px;
+    height: 60px;
+    font-size: 50px;
+  }
+  .button-task{
+    font-size: 40px;
+    margin: 20px;
+    height: 70px;
+    width: 210px;
+  }
+  .container-section-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 5% 20%;
+  }
+  .container-section-list,
+  #task-list {
+    width: 100%;
+    font-size: 40px;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .li-ul {
+    display: flex;
+    width: 90%;
+    margin: 0;
+    padding: 5px;
+    flex-direction: row;
+  }
+  .button-container {
+    display: flex;
+    flex-grow: 1;
+  }
+  .delete-button,
+  .edit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 100px;
+    width: 150px;
+    align-content: center;
+    font-size: xx-large;
+  }
 }
