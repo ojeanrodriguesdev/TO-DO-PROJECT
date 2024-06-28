@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiscal Notes</title>
+    <link rel="stylesheet" href="/assets/css/pages/index/index.css" />
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <div class="d-jr">
+          <a class="dh-ah1" href="index.html">
+            <h1 class="h1-header-1">Jean Rodrigues</h1>
+          </a>
+        </div>
+        <h1 class="h1-header">|</h1>
+        <div class="h-div">
+          <h1 class="h-1">Fiscal Notes</h1>
+        </div>
+      </header>
+      <div id="overlay" class="overlay" style="display: none;"></div>
+      <div id="popup" class="popup" style="display: none;">
+        <form class="popup-form">
+          <h2 class="h2-popup">Create / Edit Fiscal Notes</h2>
+          <input type="hidden" id="popup-id" />
+          <input type="text" id="popup-product" placeholder="Product" />
+          <input type="number" id="popup-quantify" placeholder="Quantify" />
+          <input type="date" id="popup-date" placeholder="Date" />
+          <input type="text" id="popup-supplier" placeholder="Supplier" />
+          <input type="text" id="popup-address" placeholder="Address" />
+          <input type="number" id="popup-taxes" placeholder="Taxes" />
+          <input
+            type="text"
+            id="popup-payment-methods"
+            placeholder="Payments Methods"
+            />
+            <textarea
+              id="popup-description"
+              placeholder="Description"
+            ></textarea>
+          <div class="popup-actions">
+            <button class="button-actions" type="button" onClick="savePopupNote()">Save</button>
+            <button class="button-actions" type="button" onClick="closePopup()">Cancel</button>
+          </div>
+        </form>
+      </div>
+      <section class="notes-section">
+        <div class="table-container">
+          <button class="table-button" onclick="openPopup()">Create</button>
+          <table class="notes-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Product</th>
+                <th>Quantify</th>
+                <th>Date</th>
+                <th>Supplier</th>
+                <th>Address</th>
+                <th>Taxes</th>
+                <th>Payments Methods</th>
+                <th>Description</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="notes-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="assets/js/fiscal-notes/fiscalNotes.js"></script>
+  </body>
+</html>
