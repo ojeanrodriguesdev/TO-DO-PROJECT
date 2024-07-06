@@ -240,7 +240,7 @@ h1 {
 .detail-actions {
   margin-top: 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   gap: 10px;
 }
 
@@ -295,4 +295,16 @@ h1 {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.button-container-edit{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button-container-details{
+  display: flex;
+  justify-content: center;
 }
