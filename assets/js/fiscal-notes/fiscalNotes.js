@@ -3,92 +3,18 @@ let editIndex = -1;
 let nextId = 1;
 
 document.addEventListener("DOMContentLoaded", () => {
-  saveNotesFromLocalStorage();
+  loadNotesFromLocalStorage();
   renderTable();
 });
 
-function saveNote() {
-  const id = editIndex >= 0 ? notes[editIndex].id : nextId++;
-  const product = document.getElementById("product").value;
-  const quantify = document.getElementById("quantify").value;
-  const date = document.getElementById("date").value;
-  const supplier = document.getElementById("supplier").value;
-  const address = document.getElementById("address").value;
-  const taxes = document.getElementById("taxes").value;
-  const paymentMethods = document.getElementById("payment-methods").value;
-  const description = document.getElementById("description").value;
-
-  const note = {
-    id: id || new Date().getTime(),
-    product,
-    quantify,
-    date,
-    supplier,
-    address,
-    taxes,
-    paymentMethods,
-    description, 
-  };
-
-  if (editIndex >= 0) {
-    notes[editIndex] = note;
-    editIndex = -1;
-  } else {
-    notes.push(note);
-  }
-
-  renderTable();
-  clearForm();
-}
-
-function editNote(index) {
-  const note = notes[index];
-  document.getElementById("popup-id").value = note.id;
-  document.getElementById("popup-product").value = note.product;
-  document.getElementById("popup-quantify").value = note.quantify;
-  document.getElementById("popup-date").value = note.date;
-  document.getElementById("popup-supplier").value = note.supplier;
-  document.getElementById("popup-address").value = note.address;
-  document.getElementById("popup-taxes").value = note.taxes;
-  document.getElementById("popup-payment-methods").value = note.paymentMethods;
-  document.getElementById("popup-description").value = note.description;
-  editIndex = index;
-  openPopup();
-}
-
-function deleteNote(index) {
-  notes.splice(index, 1);
-  renderTable();
-}
-
-function reorganizeIds() {
-  notes.forEach((note, index) => {
-    note.id = index + 1;
-  });
-  nextId = notes.length + 1;
-}
-
-function clearForm() {
-  document.getElementById("note-id").value = "";
-  document.getElementById("product").value = "";
-  document.getElementById("quantify").value = "";
-  document.getElementById("date").value = "";
-  document.getElementById("supplier").value = "";
-  document.getElementById("address").value = "";
-  document.getElementById("taxes").value = "";
-  document.getElementById("payment-methods").value = "";
-  document.getElementById("description").value = "";
-  editIndex = -1;
-}
-
 function openPopup() {
-  document.getElementById("overlay").classList.remove("hidden");
-  document.getElementById("popup").classList.remove("hidden");
+  document.getElementById("overlay").style.visibility = "visible";
+  document.getElementById("popup").style.visibility = "visible";
 }
 
 function closePopup() {
-  document.getElementById("overlay").classList.add("hidden");
-  document.getElementById("popup").classList.add("hidden");
+  document.getElementById("overlay").style.visibility = "hidden";
+  document.getElementById("popup").style.visibility = "hidden";
   clearPopupForm();
 }
 
@@ -116,6 +42,20 @@ function savePopupNote() {
   const paymentMethods = document.getElementById("popup-payment-methods").value;
   const description = document.getElementById("popup-description").value;
 
+  if (
+    !product ||
+    !quantify ||
+    !date ||
+    !supplier ||
+    !address ||
+    !taxes ||
+    !paymentMethods ||
+    !description
+  ) {
+    console.error("One or more form elements not found");
+    return;
+  }
+
   const note = {
     id: id || new Date().getTime(),
     product,
@@ -137,7 +77,37 @@ function savePopupNote() {
 
   saveNotesToLocalStorage();
   renderTable();
+  clearPopupForm();
   closePopup();
+}
+
+function editNote(index) {
+  const note = notes[index];
+  document.getElementById("popup-id").value = note.id;
+  document.getElementById("popup-product").value = note.product;
+  document.getElementById("popup-quantify").value = note.quantify;
+  document.getElementById("popup-date").value = note.date;
+  document.getElementById("popup-supplier").value = note.supplier;
+  document.getElementById("popup-address").value = note.address;
+  document.getElementById("popup-taxes").value = note.taxes;
+  document.getElementById("popup-payment-methods").value = note.paymentMethods;
+  document.getElementById("popup-description").value = note.description;
+  editIndex = index;
+  openPopup();
+}
+
+function deleteNote(index) {
+  notes.splice(index, 1);
+  reorganizeIds();
+  saveNotesToLocalStorage();
+  renderTable();
+}
+
+function reorganizeIds() {
+  notes.forEach((note, index) => {
+    note.id = index + 1;
+  });
+  nextId = notes.length + 1;
 }
 
 function renderTable() {
@@ -154,30 +124,28 @@ function renderTable() {
 
     const actionTd = document.createElement("td");
     actionTd.innerHTML = `
-              <button onclick="editNote(${index})">Editar</button>
-              <button onclick="deleteNote(${index})">Excluir</button>
-          `;
+      <button onclick="editNote(${index})">Editar</button>
+      <button onclick="deleteNote(${index})">Excluir</button>
+    `;
     tr.appendChild(actionTd);
-
     tbody.appendChild(tr);
   });
-}
-
-function deleteNote(index) {
-  notes.splice(index, 1);
-  reorganizeIds();
-  saveNotesToLocalStorage();
-  renderTable();
 }
 
 function saveNotesToLocalStorage() {
   localStorage.setItem("notes", JSON.stringify(notes));
 }
 
-function saveNotesFromLocalStorage() {
+function loadNotesFromLocalStorage() {
   const storedNotes = localStorage.getItem("notes");
   if (storedNotes) {
     notes = JSON.parse(storedNotes);
     reorganizeIds();
   }
 }
+
+document.getElementById("overlay").addEventListener("click", closePopup);
+
+document.getElementById("popup").addEventListener("click", (event) => {
+  event.stopPropagation();
+});

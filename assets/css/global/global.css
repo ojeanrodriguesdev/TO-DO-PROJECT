@@ -4,9 +4,3 @@
 @import './normalize.css';
 @import './variables.css';
 
-body {
-    background-color: #cccccc;
-  }
-p{
-  margin: 10px;
-}
