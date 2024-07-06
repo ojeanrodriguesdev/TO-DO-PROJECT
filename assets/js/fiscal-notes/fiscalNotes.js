@@ -61,11 +61,11 @@ function deleteNote(index) {
   renderTable();
 }
 
-function reorganizeIds(){
-    notes.forEach((note, index) => {
-        note.id = index + 1;
-    });
-    nextId = notes.length + 1;
+function reorganizeIds() {
+  notes.forEach((note, index) => {
+    note.id = index + 1;
+  });
+  nextId = notes.length + 1;
 }
 
 function clearForm() {
@@ -82,13 +82,13 @@ function clearForm() {
 }
 
 function openPopup() {
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("popup").style.display = "block";
+  document.getElementById("overlay").classList.remove("hidden");
+  document.getElementById("popup").classList.remove("hidden");
 }
 
 function closePopup() {
-  document.getElementById("overlay").style.display = "none";
-  document.getElementById("popup").style.display = "none";
+  document.getElementById("overlay").classList.add("hidden");
+  document.getElementById("popup").classList.add("hidden");
   clearPopupForm();
 }
 

@@ -5,10 +5,9 @@ body {
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
+  width: 80%;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 20px;
 }
 
 h1 {
@@ -240,12 +239,7 @@ h1 {
 .detail-actions {
   margin-top: 20px;
   display: flex;
-<<<<<<< HEAD
   justify-content: space-around;
-=======
-  justify-content: flex-end;
->>>>>>> 3dbf1573ba10e1e6e22ccc8f85f09cfa8f1a0a7c
-  gap: 10px;
 }
 
 .edit-btn,
