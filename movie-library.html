@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Library</title>
+    <link rel="stylesheet" href="assets/css/pages/movie-library/index.css" />
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <div class="d-jr">
+          <a class="dh-ah1" href="index.html">
+            <h1 class="h1-header-1">Jean Rodrigues</h1>
+          </a>
+        </div>
+        <h1 class="h1-header">|</h1>
+        <div class="h-div">
+          <h1 class="h-1">Movie Library</h1>
+        </div>
+      </header>
+      <section>
+        <div class="container">
+          <h1>Movie Library</h1>
+          <form id="movie-form">
+            <input
+              type="text"
+              id="movie-title"
+              placeholder="Title Movie"
+              required
+            />
+            <input type="file" id="movie-cover" accept="image/*" required />
+            <input
+              type="text"
+              id="movie-director"
+              placeholder="Director"
+              required
+            />
+            <input type="number" id="movie-year" placeholder="Release Year" />
+            <textarea
+              id="movie-synopsis"
+              placeholder="Synopsis"
+              required
+            ></textarea>
+            <button type="submit">Add Movie</button>
+          </form>
+          <div id="movie-list" class="movie-list"></div>
+        </div>
+        <div
+          id="movie-details-${index}"
+          class="movie-details"
+          style="display: none"
+        >
+          <div id="detail-content" class="detail-content"></div>
+        </div>
+        <div id="editModal" class="editModal">
+          <div class="modal-content">
+            <h2>Edit Movie</h2>
+            <form id="editForm">
+              <input type="text" id="editTitle" placeholder="Title" required />
+              <input
+                type="text"
+                id="editDirector"
+                placeholder="Director"
+                required
+              />
+              <input
+                type="number"
+                id="editYear"
+                placeholder="Release Year"
+                required
+              />
+              <textarea
+                id="editSynopsis"
+                placeholder="Synopsis"
+                required
+              ></textarea>
+              <button type="submit">Save Changes</button>
+              <button id="close" class="close">Close</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="assets/js/movie-library/movielibrary.js"></script>
+  </body>
+</html>
