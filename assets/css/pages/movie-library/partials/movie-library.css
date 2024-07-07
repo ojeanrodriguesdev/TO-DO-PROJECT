@@ -33,7 +33,7 @@ h1 {
 }
 
 #movie-form button {
-  background-color: #3498db;
+  background-color: #48bb78;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -42,7 +42,7 @@ h1 {
 }
 
 #movie-form button:hover {
-  background-color: #2980b9;
+  background-color: #2f855a;
 }
 
 .movie-list {
